@@ -9,20 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let softEggTime = 5
-    let medEggTime = 8
-    let hardEggTime = 12
+    let softEggTime = 5 * 60
+    let medEggTime = 8 * 60
+    let hardEggTime = 12 * 60
     var testingTimer : Float = 0
     weak var timer: Timer?
 
     @IBOutlet weak var eggProgressView: UIProgressView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //init progress bar
+        eggProgressView.progress = 0.0
+    }
     
     @IBAction func eggSelected(_ sender: UIButton) {
         let eggTime = sender.tag
         switch eggTime {
         case 5:
             print("soft egg started")
-            startTimer()
+            startTimer(level : 5)
         default:
             print("cannot start progress bar.")
         }
@@ -38,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func startTimer() {
+    func startTimer(level : Int) {
         timer?.invalidate()   // stops previous timer, if any
 
         let seconds = 1.0
