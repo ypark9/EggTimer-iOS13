@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5D8B720BBECFDB257227AF0 /* Pods_EggTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B70A962FCBCD5A445D11B28 /* Pods_EggTimer.framework */; };
 		AD5C106222D34E35001E14A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD5C106122D34E35001E14A5 /* README.md */; };
 		AD5C106622D36212001E14A5 /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD5C106522D36212001E14A5 /* alarm_sound.mp3 */; };
 		ADF037EE22D332A800A69E9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF037ED22D332A800A69E9A /* AppDelegate.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B70A962FCBCD5A445D11B28 /* Pods_EggTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68127242DB69F75E0C276A55 /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
+		9E5387FCE5E55037F77489D8 /* Pods-EggTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.debug.xcconfig"; path = "Target Support Files/Pods-EggTimer/Pods-EggTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5C106122D34E35001E14A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD5C106522D36212001E14A5 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
 		ADF037EA22D332A800A69E9A /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,18 +39,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D8B720BBECFDB257227AF0 /* Pods_EggTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55F46DC12D8077D01B4C6514 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E5387FCE5E55037F77489D8 /* Pods-EggTimer.debug.xcconfig */,
+				68127242DB69F75E0C276A55 /* Pods-EggTimer.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ADF037E122D332A800A69E9A = {
 			isa = PBXGroup;
 			children = (
 				AD5C106122D34E35001E14A5 /* README.md */,
 				ADF037EC22D332A800A69E9A /* EggTimer */,
 				ADF037EB22D332A800A69E9A /* Products */,
+				55F46DC12D8077D01B4C6514 /* Pods */,
+				BBF8E5B04705140D01BAD19F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +90,14 @@
 			path = EggTimer;
 			sourceTree = "<group>";
 		};
+		BBF8E5B04705140D01BAD19F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B70A962FCBCD5A445D11B28 /* Pods_EggTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADF037FE22D332AD00A69E9A /* Build configuration list for PBXNativeTarget "EggTimer" */;
 			buildPhases = (
+				AFB938C1BC856F8196DECDA0 /* [CP] Check Pods Manifest.lock */,
 				ADF037E622D332A800A69E9A /* Sources */,
 				ADF037E722D332A800A69E9A /* Frameworks */,
 				ADF037E822D332A800A69E9A /* Resources */,
+				7E00759A3539617040042A3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E00759A3539617040042A3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EggTimer/Pods-EggTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFB938C1BC856F8196DECDA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EggTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADF037E622D332A800A69E9A /* Sources */ = {
@@ -290,6 +359,7 @@
 		};
 		ADF037FF22D332AD00A69E9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E5387FCE5E55037F77489D8 /* Pods-EggTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,6 +377,7 @@
 		};
 		ADF0380022D332AD00A69E9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68127242DB69F75E0C276A55 /* Pods-EggTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

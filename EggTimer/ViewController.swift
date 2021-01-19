@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let softEggTime = 5 * 60
-    let medEggTime = 8 * 60
-    let hardEggTime = 12 * 60
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
+    let softEggTime = 5
+    let medEggTime = 8
+    let hardEggTime = 12
     var testingTimer : Float = 0
     weak var timer: Timer?
 
@@ -21,26 +23,37 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //init progress bar
         eggProgressView.progress = 0.0
+        progressPercentageLabel.isHidden = true
     }
     
     @IBAction func eggSelected(_ sender: UIButton) {
+        progressPercentageLabel.isHidden = false
         let eggTime = sender.tag
-        switch eggTime {
-        case 5:
-            print("soft egg started")
-            startTimer(level : 5)
-        default:
-            print("cannot start progress bar.")
-        }
+//        switch eggTime {
+//        case 5:
+//            print("soft egg started")
+//            startTimer(level : 5)
+//        case 8:
+//            print("soft egg started")
+//            startTimer(level : 8)
+//        case 12:
+//            print("soft egg started")
+//            startTimer(level : 5)
+//        default:
+//            print("cannot start progress bar.")
+//        }
+        startTimer(level: Int(eggTime))
     }
     
     @objc func timerHandler(_ timer: Timer) {
         testingTimer += 1
         print("timer : \(testingTimer)")
         eggProgressView.setProgress(testingTimer/Float(softEggTime), animated: true)
+        progressPercentageLabel.text = "Progress : \(100 * Int(testingTimer)/softEggTime)%"
         if testingTimer == Float(softEggTime) {
             timer.invalidate()
             testingTimer = 0
+            titleLabel.text = "Done"
         }
     }
     
